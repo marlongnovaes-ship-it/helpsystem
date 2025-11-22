@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-import DiagnosticGame from "@/components/DiagnosticGame";
 import VirtualAssistant from "@/components/VirtualAssistant";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
-import AchievementSystem from "@/components/AchievementSystem";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -94,10 +92,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white overflow-hidden">
       {/* Interactive Components */}
-      <DiagnosticGame />
       <VirtualAssistant />
       <PerformanceMonitor />
-      <AchievementSystem />
       {/* Animated particles background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-[120px] animate-pulse-slow" />
