@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1763046303371,
+      "tag": "0000_polite_legion",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1763046372240,
+      "tag": "0001_smooth_yellow_claw",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1763048091381,
+      "tag": "0002_white_night_thrasher",
+      "breakpoints": true
+    }
+  ]
+}
