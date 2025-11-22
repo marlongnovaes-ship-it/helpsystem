@@ -7,7 +7,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { trpc } from "@/lib/trpc";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
-import { Monitor, Wrench, Download, Headset, Clock, Calendar, Server, Cpu, HardDrive, Zap, Shield, Users, CheckCircle2, Star } from "lucide-react";
+import { 
+  Monitor, Wrench, Download, Headset, Clock, Calendar, Server, Cpu, HardDrive, 
+  Zap, Shield, Users, CheckCircle2, Star, Database, Wifi, Code, Terminal,
+  Rocket, Activity, TrendingUp, MessageSquare
+} from "lucide-react";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -74,6 +78,15 @@ export default function Home() {
     });
   };
 
+  const technologies = [
+    { name: "Windows", icon: Monitor, color: "blue" },
+    { name: "Linux", icon: Terminal, color: "green" },
+    { name: "Redes", icon: Wifi, color: "cyan" },
+    { name: "Servidores", icon: Server, color: "purple" },
+    { name: "Banco de Dados", icon: Database, color: "orange" },
+    { name: "Hardware", icon: Cpu, color: "red" },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white overflow-hidden">
       {/* Animated particles background */}
@@ -81,15 +94,21 @@ export default function Home() {
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-[120px] animate-pulse-slow" />
         <div className="absolute top-40 right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: '1s' }} />
         <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-green-500/20 rounded-full blur-[120px] animate-pulse-slow" style={{ animationDelay: '3s' }} />
       </div>
 
-      {/* Floating tech icons */}
+      {/* More floating tech icons */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <Server className="absolute top-20 left-[10%] w-8 h-8 text-blue-400/30 animate-float-slow" />
         <Cpu className="absolute top-40 right-[15%] w-10 h-10 text-purple-400/30 animate-float-slow" style={{ animationDelay: '0.5s' }} />
         <HardDrive className="absolute bottom-32 left-[20%] w-7 h-7 text-cyan-400/30 animate-float-slow" style={{ animationDelay: '1s' }} />
         <Shield className="absolute top-1/2 right-[10%] w-9 h-9 text-green-400/30 animate-float-slow" style={{ animationDelay: '1.5s' }} />
         <Zap className="absolute bottom-40 right-[25%] w-8 h-8 text-yellow-400/30 animate-float-slow" style={{ animationDelay: '2s' }} />
+        <Database className="absolute top-1/3 left-[15%] w-8 h-8 text-orange-400/30 animate-float-slow" style={{ animationDelay: '2.5s' }} />
+        <Wifi className="absolute bottom-1/3 right-[20%] w-9 h-9 text-cyan-400/30 animate-float-slow" style={{ animationDelay: '3s' }} />
+        <Code className="absolute top-2/3 left-[30%] w-8 h-8 text-pink-400/30 animate-float-slow" style={{ animationDelay: '3.5s' }} />
+        <Terminal className="absolute top-1/4 right-[30%] w-7 h-7 text-green-400/30 animate-float-slow" style={{ animationDelay: '4s' }} />
+        <Activity className="absolute bottom-1/4 left-[25%] w-8 h-8 text-blue-400/30 animate-float-slow" style={{ animationDelay: '4.5s' }} />
       </div>
 
       {/* Header */}
@@ -170,6 +189,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Fast Response Banner */}
+      <section className="relative py-8 bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 animate-gradient">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
+            <div className="flex items-center gap-3">
+              <div className="p-3 bg-white/20 rounded-full animate-pulse-glow">
+                <Rocket className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-left">
+                <h3 className="text-2xl md:text-3xl font-bold text-white">Atendimento Ultra Rápido</h3>
+                <p className="text-white/90 text-lg">Prezamos por respostas rápidas, sem deixar você esperando!</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-white">
+                  <MessageSquare className="w-12 h-12 inline animate-bounce" />
+                </div>
+                <p className="text-white/90 text-sm">Resposta Imediata</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-white">
+                  <TrendingUp className="w-12 h-12 inline animate-pulse" />
+                </div>
+                <p className="text-white/90 text-sm">Alta Performance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section id="stats" className="relative py-16 bg-black/30 backdrop-blur-sm border-y border-white/10">
         <div className="container mx-auto px-4">
@@ -205,8 +255,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Technologies Section */}
+      <section className="relative py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Tecnologias que Dominamos
+            </h2>
+            <p className="text-gray-400 text-lg">Expertise em múltiplas plataformas e sistemas</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {technologies.map((tech, index) => (
+              <div 
+                key={index}
+                className="group relative"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg blur-xl opacity-0 group-hover:opacity-75 transition-opacity" />
+                <div className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:border-blue-500/50 transition-all hover:scale-110 transform">
+                  <tech.icon className={`w-12 h-12 mx-auto mb-3 text-${tech.color}-400 group-hover:scale-110 transition-transform`} />
+                  <p className="text-center text-sm text-gray-300 font-semibold">{tech.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section id="servicos" className="relative py-20">
+      <section id="servicos" className="relative py-20 bg-black/30 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -244,7 +321,7 @@ export default function Home() {
       </section>
 
       {/* Horários Section */}
-      <section id="atendimento" className="relative py-20 bg-black/30 backdrop-blur-sm">
+      <section id="atendimento" className="relative py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="group bg-gradient-to-br from-blue-900/50 to-slate-900/50 backdrop-blur-sm border-blue-500/30 hover:border-blue-400 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/30">
@@ -289,7 +366,7 @@ export default function Home() {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contato" className="relative py-20">
+      <section id="contato" className="relative py-20 bg-black/30 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
