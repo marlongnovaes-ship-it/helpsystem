@@ -6,58 +6,67 @@ import { Button } from "@/components/ui/button";
 interface Testimonial {
   id: number;
   name: string;
-  role: string;
-  company: string;
+  location: string;
   text: string;
   rating: number;
   image: string;
+  date: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Carlos Silva",
-    role: "Empresário",
-    company: "Silva & Associados",
-    text: "Excelente atendimento! Resolveram meu problema de forma rápida e profissional. Meu computador está funcionando perfeitamente agora. Super recomendo!",
+    name: "Carlos M.",
+    location: "São Paulo, SP",
+    text: "Meu notebook tava travando direto, não aguentava mais! Levei lá e em 2 dias tava pronto, rodando liso. Fizeram limpeza, trocaram a pasta térmica e ainda formataram. Ficou novo! Preço honesto e atendimento top. Já indiquei pra galera do trabalho.",
     rating: 5,
-    image: "👨‍💼"
+    image: "👨",
+    date: "Há 2 semanas"
   },
   {
     id: 2,
-    name: "Ana Paula Santos",
-    role: "Gerente de TI",
-    company: "Tech Solutions",
-    text: "Equipe muito competente e atenciosa. Fizeram a formatação completa do meu notebook e ainda me deram dicas de manutenção. Serviço impecável!",
+    name: "Ana Paula",
+    location: "Guarulhos, SP",
+    text: "Pessoal, que atendimento incrível! Meu PC pegou vírus e perdi uns arquivos importantes. Eles conseguiram recuperar TUDO e ainda limparam o sistema. Explicaram cada passo, super pacientes. Agora só chamo eles quando preciso. Vale cada centavo! 💙",
     rating: 5,
-    image: "👩‍💻"
+    image: "👩",
+    date: "Há 1 mês"
   },
   {
     id: 3,
-    name: "Roberto Oliveira",
-    role: "Contador",
-    company: "Contabilidade RO",
-    text: "Precisava de suporte urgente e fui muito bem atendido. Resolveram tudo remotamente em menos de 1 hora. Profissionalismo nota 10!",
+    name: "Roberto S.",
+    location: "Osasco, SP",
+    text: "Tava precisando urgente de suporte pra uma apresentação importante. Chamei pelo WhatsApp às 22h (sim, de noite!) e o cara me atendeu na hora, resolveu tudo remoto em 40 minutos. Salvou minha vida! Profissionalismo 1000%. Recomendo de olhos fechados!",
     rating: 5,
-    image: "👨‍💼"
+    image: "👨‍💼",
+    date: "Há 3 dias"
   },
   {
     id: 4,
-    name: "Mariana Costa",
-    role: "Designer",
-    company: "Studio Criativo",
-    text: "Meu PC estava super lento e eles fizeram um upgrade de SSD e RAM. Agora está voando! Atendimento excelente e preço justo.",
+    name: "Mari Costa",
+    location: "Santo André, SP",
+    text: "Gente, meu PC tava uma lesma, demorava 10 min pra ligar 😫 Fizeram upgrade de SSD e memória RAM, agora liga em 15 segundos! Parece mágica kkk. Além disso, me ensinaram a manter ele sempre rápido. Amei o serviço, super indico! ⚡",
     rating: 5,
-    image: "👩‍🎨"
+    image: "👩‍🦰",
+    date: "Há 1 semana"
   },
   {
     id: 5,
-    name: "João Pedro Lima",
-    role: "Estudante",
-    company: "Universidade Federal",
-    text: "Tive um problema sério com vírus no meu notebook. A equipe foi super atenciosa, explicou tudo direitinho e resolveu rapidinho. Muito obrigado!",
+    name: "João Pedro",
+    location: "São Bernardo, SP",
+    text: "Sou estudante e meu note é minha vida. Ele começou a desligar do nada, fiquei desesperado. Levei lá e descobriram que era problema na ventoinha. Consertaram no mesmo dia e ainda fizeram uma revisão geral. Preço justo e muita honestidade. Virei cliente!",
     rating: 5,
-    image: "👨‍🎓"
+    image: "👦",
+    date: "Há 5 dias"
+  },
+  {
+    id: 6,
+    name: "Fernanda L.",
+    location: "Diadema, SP",
+    text: "Melhor experiência que já tive com técnico de informática! Meu computador não conectava no WiFi de jeito nenhum. Eles vieram em casa, identificaram o problema (placa de rede queimada) e já trouxeram a peça. Resolveram na hora. Educados, rápidos e preço bom. Nota 10! 👏",
+    rating: 5,
+    image: "👩‍🦱",
+    date: "Há 4 dias"
   }
 ];
 
@@ -138,8 +147,8 @@ export default function Testimonials() {
                 {/* Author Info */}
                 <div className="space-y-1">
                   <h4 className="text-white font-bold text-xl">{currentTestimonial.name}</h4>
-                  <p className="text-blue-400 font-medium">{currentTestimonial.role}</p>
-                  <p className="text-gray-500 text-sm">{currentTestimonial.company}</p>
+                  <p className="text-blue-400 font-medium">{currentTestimonial.location}</p>
+                  <p className="text-gray-500 text-sm">{currentTestimonial.date}</p>
                 </div>
               </div>
 
