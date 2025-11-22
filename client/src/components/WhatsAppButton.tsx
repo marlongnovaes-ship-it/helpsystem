@@ -4,6 +4,9 @@ import { MessageCircle } from "lucide-react";
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
   const [whatsappNumber, setWhatsappNumber] = useState("");
+  const [badgeText, setBadgeText] = useState("Técnico Online");
+
+  const badgeMessages = ["Técnico Online", "Atendente Online"];
 
   useEffect(() => {
     // Carregar número do WhatsApp do localStorage
@@ -18,6 +21,23 @@ export default function WhatsAppButton() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    // Alternar mensagem do badge a cada 6-10 segundos (aleatório)
+    const changeBadgeText = () => {
+      const randomMessage = badgeMessages[Math.floor(Math.random() * badgeMessages.length)];
+      setBadgeText(randomMessage);
+      
+      // Próxima mudança em 6-10 segundos
+      const nextInterval = 6000 + Math.random() * 4000; // 6000ms a 10000ms
+      setTimeout(changeBadgeText, nextInterval);
+    };
+
+    // Iniciar após 6 segundos
+    const initialTimer = setTimeout(changeBadgeText, 6000);
+
+    return () => clearTimeout(initialTimer);
+  }, []);
+
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Vim pelo site e preciso de suporte técnico. Pode me ajudar?");
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
@@ -29,10 +49,10 @@ export default function WhatsAppButton() {
     <>
       {/* Botão WhatsApp Flutuante */}
       <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 flex items-center gap-2">
-        {/* Badge "Técnico Online" - apenas desktop */}
+        {/* Badge com mensagem alternada - apenas desktop */}
         <div className="hidden md:flex bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1.5 rounded-full shadow-lg items-center gap-1.5 animate-fade-in">
           <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-          <span className="text-sm font-semibold whitespace-nowrap">Técnico Online</span>
+          <span className="text-sm font-semibold whitespace-nowrap">{badgeText}</span>
         </div>
 
         {/* Botão WhatsApp */}
