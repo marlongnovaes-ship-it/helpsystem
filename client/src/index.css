@@ -265,4 +265,82 @@
       max-width: 1280px; /* Standard content width */
     }
   }
+
+  /* Otimizações para dispositivos móveis */
+  @media (max-width: 768px) {
+    /* Melhorar touch targets em mobile */
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+
+    /* Ajustar tamanho de fonte para melhor legibilidade */
+    body {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Otimizar inputs para mobile */
+    input, textarea, select {
+      font-size: 16px; /* Evita zoom automático no iOS */
+    }
+
+    /* Melhorar espaçamento em cards */
+    .card {
+      margin-bottom: 1rem;
+    }
+
+    /* Ajustar animações para mobile */
+    .animate-slide-in-left,
+    .animate-slide-in-right {
+      animation-duration: 0.5s;
+    }
+
+    /* Reduzir motion para economia de bateria */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  }
+
+  /* Otimizações para telas pequenas */
+  @media (max-width: 480px) {
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    /* Ajustar tamanho de títulos */
+    h1 {
+      font-size: 1.875rem; /* 30px */
+    }
+
+    h2 {
+      font-size: 1.5rem; /* 24px */
+    }
+
+    h3 {
+      font-size: 1.25rem; /* 20px */
+    }
+  }
+
+  /* Otimizações para landscape em mobile */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .min-h-screen {
+      min-height: auto;
+    }
+  }
+
+  /* Suporte para notch/safe area em dispositivos modernos */
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+  }
 }
