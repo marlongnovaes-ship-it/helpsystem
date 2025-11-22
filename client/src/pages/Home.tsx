@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import VirtualAssistant from "@/components/VirtualAssistant";
 import TechEffects from "@/components/TechEffects";
 import FloatingHardware from "@/components/FloatingHardware";
+import Testimonials from "@/components/Testimonials";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -57,28 +58,29 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  const createRequest = trpc.support.create.useMutation({
-    onSuccess: () => {
-      toast.success("Solicitação enviada com sucesso! Entraremos em contato em breve.");
-      setFormData({ name: "", email: "", serviceType: "", description: "" });
-    },
-    onError: (error) => {
-      toast.error("Erro ao enviar solicitação: " + error.message);
-    },
-  });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.serviceType) {
       toast.error("Por favor, selecione um tipo de serviço");
       return;
     }
-    createRequest.mutate({
+
+    // Salvar mensagem no localStorage para o painel admin
+    const newContact = {
+      id: Date.now().toString(),
       name: formData.name,
       email: formData.email,
-      serviceType: formData.serviceType as "formatacao" | "limpeza" | "atualizacao" | "suporte_remoto",
-      description: formData.description,
-    });
+      message: `Serviço: ${formData.serviceType}\n\n${formData.description || 'Sem descrição adicional'}`,
+      date: new Date().toLocaleString('pt-BR'),
+      status: "new" as const
+    };
+
+    const existingContacts = JSON.parse(localStorage.getItem("contact_requests") || "[]");
+    existingContacts.unshift(newContact);
+    localStorage.setItem("contact_requests", JSON.stringify(existingContacts));
+
+    toast.success("✅ Mensagem enviada com sucesso! Entraremos em contato em breve.");
+    setFormData({ name: "", email: "", serviceType: "", description: "" });
   };
 
   const technologies = [
@@ -448,9 +450,8 @@ export default function Home() {
                     type="submit" 
                     size="lg" 
                     className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-lg shadow-blue-500/50 hover:shadow-blue-500/70 transition-all hover:scale-105 transform"
-                    disabled={createRequest.isPending}
                   >
-                    {createRequest.isPending ? "Enviando..." : "Enviar Solicitação"}
+                    Enviar Solicitação
                   </Button>
                 </form>
               </CardContent>
@@ -458,6 +459,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Footer */}
       <footer className="relative py-12 border-t border-white/10 bg-black/30 backdrop-blur-sm">
