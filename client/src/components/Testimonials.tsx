@@ -10,7 +10,6 @@ interface Testimonial {
   text: string;
   rating: number;
   image: string;
-  date: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -20,8 +19,7 @@ const testimonials: Testimonial[] = [
     location: "São Paulo, SP",
     text: "Meu notebook tava travando direto, não aguentava mais! Chamei pelo WhatsApp e em 20 minutos já estavam acessando remoto. Fizeram limpeza de sistema, otimização e ainda tiraram uns vírus. Ficou voando! Tudo online, super prático. Preço honesto demais!",
     rating: 5,
-    image: "👨",
-    date: "Há 2 semanas"
+    image: "👨"
   },
   {
     id: 2,
@@ -29,8 +27,7 @@ const testimonials: Testimonial[] = [
     location: "Florianópolis, SC",
     text: "Pessoal, que atendimento incrível! Meu PC pegou vírus e perdi uns arquivos importantes. Atenderam remoto na hora, conseguiram recuperar TUDO e ainda limparam o sistema. Explicaram cada passo, super pacientes. Atendimento online sensacional! Vale cada centavo! 💙",
     rating: 5,
-    image: "👩",
-    date: "Há 1 mês"
+    image: "👩"
   },
   {
     id: 3,
@@ -38,8 +35,7 @@ const testimonials: Testimonial[] = [
     location: "Recife, PE",
     text: "Cara, é 1h30 DA MANHÃ e meu PC travou no meio de um trabalho urgente que tinha que entregar às 8h. Entrei em desespero total! Mandei no WhatsApp sem esperança nenhuma... e CARA, o técnico me respondeu NA HORA! Destravou tudo remoto em 30 min. Salvou minha vida literalmente! Atendimento 24/7 de verdade! 🙏",
     rating: 5,
-    image: "👨‍💻",
-    date: "Há 2 dias"
+    image: "👨‍💻"
   },
   {
     id: 4,
@@ -47,8 +43,7 @@ const testimonials: Testimonial[] = [
     location: "Campo Grande, MS",
     text: "Precisava de atendimento presencial urgente, meu PC não ligava de jeito nenhum. Eles vieram em casa no mesmo dia! Descobriram que era a fonte queimada, trocaram na hora e ainda fizeram uma revisão completa. Profissionais top, super educados. Melhor atendimento presencial que já tive! 🔧",
     rating: 5,
-    image: "👩‍💼",
-    date: "Há 3 dias"
+    image: "👩‍💼"
   },
   {
     id: 5,
@@ -56,8 +51,7 @@ const testimonials: Testimonial[] = [
     location: "Manaus, AM",
     text: "Sou estudante e meu note é minha vida. Ele começou a desligar do nada, fiquei desesperado. Entrei no site, mandei mensagem e em minutos já tavam me atendendo remoto. Descobriram que era superaquecimento, me ensinaram a limpar e otimizaram tudo. Resolveram online mesmo, sem precisar sair de casa! Top demais! 💻",
     rating: 5,
-    image: "👦",
-    date: "Há 5 dias"
+    image: "👦"
   },
   {
     id: 6,
@@ -65,8 +59,7 @@ const testimonials: Testimonial[] = [
     location: "Campo Grande, MS",
     text: "Meu computador tava com problema físico na placa-mãe, precisava de atendimento presencial mesmo. Agendei pelo WhatsApp e vieram no dia seguinte. Levaram pra oficina, consertaram e devolveram em 2 dias. Ficou perfeito! Atendimento presencial impecável, pessoal muito gente boa. Recomendo! 👍",
     rating: 5,
-    image: "👨‍🔧",
-    date: "Há 1 semana"
+    image: "👨‍🔧"
   }
 ];
 
@@ -148,7 +141,6 @@ export default function Testimonials() {
                 <div className="space-y-1">
                   <h4 className="text-white font-bold text-xl">{currentTestimonial.name}</h4>
                   <p className="text-blue-400 font-medium">{currentTestimonial.location}</p>
-                  <p className="text-gray-500 text-sm">{currentTestimonial.date}</p>
                 </div>
               </div>
 
