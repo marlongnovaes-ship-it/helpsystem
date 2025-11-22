@@ -17,8 +17,8 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Carlos M.",
-    location: "Campinas, SP",
-    text: "Meu notebook tava travando direto, não aguentava mais! Levei lá e em 2 dias tava pronto, rodando liso. Fizeram limpeza, trocaram a pasta térmica e ainda formataram. Ficou novo! Preço honesto e atendimento top. Já indiquei pra galera do trabalho.",
+    location: "São Paulo, SP",
+    text: "Meu notebook tava travando direto, não aguentava mais! Chamei pelo WhatsApp e em 20 minutos já estavam acessando remoto. Fizeram limpeza de sistema, otimização e ainda tiraram uns vírus. Ficou voando! Tudo online, super prático. Preço honesto demais!",
     rating: 5,
     image: "👨",
     date: "Há 2 semanas"
@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
     id: 2,
     name: "Ana Paula",
     location: "Florianópolis, SC",
-    text: "Pessoal, que atendimento incrível! Meu PC pegou vírus e perdi uns arquivos importantes. Eles conseguiram recuperar TUDO e ainda limparam o sistema. Explicaram cada passo, super pacientes. Agora só chamo eles quando preciso. Vale cada centavo! 💙",
+    text: "Pessoal, que atendimento incrível! Meu PC pegou vírus e perdi uns arquivos importantes. Atenderam remoto na hora, conseguiram recuperar TUDO e ainda limparam o sistema. Explicaram cada passo, super pacientes. Atendimento online sensacional! Vale cada centavo! 💙",
     rating: 5,
     image: "👩",
     date: "Há 1 mês"
@@ -43,30 +43,30 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    name: "Mari Costa",
-    location: "Goiânia, GO",
-    text: "Gente, meu PC tava uma lesma, demorava 10 min pra ligar 😫 Fizeram upgrade de SSD e memória RAM, agora liga em 15 segundos! Parece mágica kkk. Além disso, me ensinaram a manter ele sempre rápido. Amei o serviço, super indico! ⚡",
+    name: "Juliana Ferreira",
+    location: "Campo Grande, MS",
+    text: "Precisava de atendimento presencial urgente, meu PC não ligava de jeito nenhum. Eles vieram em casa no mesmo dia! Descobriram que era a fonte queimada, trocaram na hora e ainda fizeram uma revisão completa. Profissionais top, super educados. Melhor atendimento presencial que já tive! 🔧",
     rating: 5,
-    image: "👩‍🦰",
-    date: "Há 1 semana"
+    image: "👩‍💼",
+    date: "Há 3 dias"
   },
   {
     id: 5,
     name: "João Pedro",
     location: "Manaus, AM",
-    text: "Sou estudante e meu note é minha vida. Ele começou a desligar do nada, fiquei desesperado. Levei lá e descobriram que era problema na ventoinha. Consertaram no mesmo dia e ainda fizeram uma revisão geral. Preço justo e muita honestidade. Virei cliente!",
+    text: "Sou estudante e meu note é minha vida. Ele começou a desligar do nada, fiquei desesperado. Entrei no site, mandei mensagem e em minutos já tavam me atendendo remoto. Descobriram que era superaquecimento, me ensinaram a limpar e otimizaram tudo. Resolveram online mesmo, sem precisar sair de casa! Top demais! 💻",
     rating: 5,
     image: "👦",
     date: "Há 5 dias"
   },
   {
     id: 6,
-    name: "Fernanda L.",
-    location: "Fortaleza, CE",
-    text: "Melhor experiência que já tive com técnico de informática! Meu computador não conectava no WiFi de jeito nenhum. Eles vieram em casa, identificaram o problema (placa de rede queimada) e já trouxeram a peça. Resolveram na hora. Educados, rápidos e preço bom. Nota 10! 👏",
+    name: "Marcos Silva",
+    location: "Campo Grande, MS",
+    text: "Meu computador tava com problema físico na placa-mãe, precisava de atendimento presencial mesmo. Agendei pelo WhatsApp e vieram no dia seguinte. Levaram pra oficina, consertaram e devolveram em 2 dias. Ficou perfeito! Atendimento presencial impecável, pessoal muito gente boa. Recomendo! 👍",
     rating: 5,
-    image: "👩‍🦱",
-    date: "Há 4 dias"
+    image: "👨‍🔧",
+    date: "Há 1 semana"
   }
 ];
 
