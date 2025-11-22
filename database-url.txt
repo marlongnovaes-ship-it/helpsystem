@@ -1,0 +1,1 @@
+mysql://sql10808988:NTKefunk5v@sql10.freesqldatabase.com:3306/sql10808988

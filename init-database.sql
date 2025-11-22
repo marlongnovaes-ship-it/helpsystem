@@ -9,9 +9,9 @@ CREATE TABLE IF NOT EXISTS users (
   email VARCHAR(320),
   loginMethod VARCHAR(64),
   role ENUM('user', 'admin') NOT NULL DEFAULT 'user',
-  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  createdAt DATETIME NOT NULL,
   updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  lastSignedIn TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+  lastSignedIn TIMESTAMP NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Criar tabela de solicitações de suporte
@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS supportRequests (
   serviceType ENUM('formatacao', 'limpeza', 'atualizacao', 'suporte_remoto') NOT NULL,
   description TEXT,
   status ENUM('pendente', 'em_andamento', 'concluido') NOT NULL DEFAULT 'pendente',
-  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  createdAt DATETIME NOT NULL,
   updatedAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS adminUsers (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) NOT NULL UNIQUE,
   passwordHash VARCHAR(255) NOT NULL,
-  createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+  createdAt DATETIME NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Inserir usuário administrador padrão
