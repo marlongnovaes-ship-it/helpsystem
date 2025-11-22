@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import VirtualAssistant from "@/components/VirtualAssistant";
 import TechEffects from "@/components/TechEffects";
+import CustomCursor from "@/components/CustomCursor";
+import FloatingHardware from "@/components/FloatingHardware";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -91,6 +93,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-white overflow-hidden">
+      {/* Custom Cursor */}
+      <CustomCursor />
+      
+      {/* Floating Hardware Background */}
+      <FloatingHardware />
+      
       {/* Tech Effects Background */}
       <TechEffects />
       
