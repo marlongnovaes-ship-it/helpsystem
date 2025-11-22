@@ -33,6 +33,16 @@ export default function Home() {
     satisfaction: 0,
   });
 
+  const [siteContent, setSiteContent] = useState<any>({});
+
+  // Carregar conteúdo do site do localStorage
+  useEffect(() => {
+    const savedContent = localStorage.getItem("site_content");
+    if (savedContent) {
+      setSiteContent(JSON.parse(savedContent));
+    }
+  }, []);
+
   // Animated counter effect
   useEffect(() => {
     const targets = { clients: 500, projects: 1200, satisfaction: 98 };
