@@ -29,10 +29,10 @@ export default function WhatsAppButton() {
     <>
       {/* Botão WhatsApp Flutuante */}
       <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 flex items-center gap-2">
-        {/* Badge "Técnico Online" - à esquerda do botão */}
-        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 animate-fade-in">
+        {/* Badge "Técnico Online" - apenas desktop */}
+        <div className="hidden md:flex bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1.5 rounded-full shadow-lg items-center gap-1.5 animate-fade-in">
           <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-          <span className="text-xs md:text-sm font-semibold whitespace-nowrap">Técnico Online</span>
+          <span className="text-sm font-semibold whitespace-nowrap">Técnico Online</span>
         </div>
 
         {/* Botão WhatsApp */}
