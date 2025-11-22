@@ -52,6 +52,25 @@ const trpcClient = trpc.createClient({
   ],
 });
 
+// Bloquear botão direito do mouse
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  return false;
+});
+
+// Bloquear F12, Ctrl+Shift+I, Ctrl+U (visualizar código)
+document.addEventListener('keydown', (e) => {
+  if (
+    e.key === 'F12' ||
+    (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+    (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+    (e.ctrlKey && e.key === 'U')
+  ) {
+    e.preventDefault();
+    return false;
+  }
+});
+
 createRoot(document.getElementById("root")!).render(
   <trpc.Provider client={trpcClient} queryClient={queryClient}>
     <QueryClientProvider client={queryClient}>
