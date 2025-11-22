@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import VirtualAssistant from "@/components/VirtualAssistant";
 import TechEffects from "@/components/TechEffects";
+import CommonProblems from "@/components/CommonProblems";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -192,11 +193,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+           </div>
         </div>
       </section>
 
-      {/* Fast Response Banner */}
+      {/* Common Problems Section */}
+      <CommonProblems />
+
+      {/* Fast Service Banner */}
       <section className="relative py-8 bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 animate-gradient">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center">
