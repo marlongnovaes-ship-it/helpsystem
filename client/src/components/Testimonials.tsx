@@ -145,7 +145,7 @@ export default function Testimonials() {
               </div>
 
               {/* Navigation */}
-              <div className="flex items-center justify-center gap-4">
+              <div className="flex items-center justify-center gap-2 md:gap-4">
                 <Button
                   onClick={goToPrevious}
                   variant="outline"
@@ -156,15 +156,15 @@ export default function Testimonials() {
                 </Button>
 
                 {/* Dots */}
-                <div className="flex gap-2">
+                <div className="flex gap-1.5 md:gap-2">
                   {testimonials.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => goToSlide(index)}
-                      className={`w-2.5 h-2.5 rounded-full transition-all ${
+                      className={`h-2 rounded-full transition-all ${
                         index === currentIndex
-                          ? "bg-blue-400 w-8"
-                          : "bg-gray-600 hover:bg-gray-500"
+                          ? "bg-blue-400 w-6 md:w-8"
+                          : "bg-gray-600 hover:bg-gray-500 w-2"
                       }`}
                       aria-label={`Ir para depoimento ${index + 1}`}
                     />
