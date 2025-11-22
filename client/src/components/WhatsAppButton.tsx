@@ -3,10 +3,8 @@ import { MessageCircle } from "lucide-react";
 
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showBadge, setShowBadge] = useState(true);
   const [whatsappNumber, setWhatsappNumber] = useState("");
-  const [badgeText, setBadgeText] = useState("Técnico Online");
-
-  const badgeMessages = ["Técnico Online", "Atendente Online"];
 
   useEffect(() => {
     // Carregar número do WhatsApp do localStorage
@@ -22,20 +20,12 @@ export default function WhatsAppButton() {
   }, []);
 
   useEffect(() => {
-    // Alternar mensagem do badge a cada 6-10 segundos (aleatório)
-    const changeBadgeText = () => {
-      const randomMessage = badgeMessages[Math.floor(Math.random() * badgeMessages.length)];
-      setBadgeText(randomMessage);
-      
-      // Próxima mudança em 6-10 segundos
-      const nextInterval = 6000 + Math.random() * 4000; // 6000ms a 10000ms
-      setTimeout(changeBadgeText, nextInterval);
-    };
+    // Esconder badge após 10 segundos
+    const badgeTimer = setTimeout(() => {
+      setShowBadge(false);
+    }, 10000);
 
-    // Iniciar após 6 segundos
-    const initialTimer = setTimeout(changeBadgeText, 6000);
-
-    return () => clearTimeout(initialTimer);
+    return () => clearTimeout(badgeTimer);
   }, []);
 
   const handleWhatsAppClick = () => {
@@ -49,11 +39,13 @@ export default function WhatsAppButton() {
     <>
       {/* Botão WhatsApp Flutuante */}
       <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 flex items-center gap-2">
-        {/* Badge com mensagem alternada - apenas desktop */}
-        <div className="hidden md:flex bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1.5 rounded-full shadow-lg items-center gap-1.5 animate-fade-in">
-          <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-          <span className="text-sm font-semibold whitespace-nowrap">{badgeText}</span>
-        </div>
+        {/* Badge "Atendente Online" - apenas desktop, desaparece após 10s */}
+        {showBadge && (
+          <div className="hidden md:flex bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1.5 rounded-full shadow-lg items-center gap-1.5 animate-fade-in">
+            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            <span className="text-sm font-semibold whitespace-nowrap">Atendente Online</span>
+          </div>
+        )}
 
         {/* Botão WhatsApp */}
         <button
