@@ -481,8 +481,8 @@ export default function Home() {
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-gray-300">Horários</h4>
-              <p className="text-gray-400">Remoto: 24/7</p>
-              <p className="text-gray-400">Presencial: Seg-Sex 9h-18h</p>
+              <p className="text-gray-400">Remoto: {siteContent.scheduleRemote || "24/7"}</p>
+              <p className="text-gray-400">Presencial: {siteContent.scheduleInPerson || "Seg-Sex 9h-18h"}</p>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-500">

@@ -65,6 +65,10 @@ interface SiteContent {
   footerInstagram: string;
   footerLinkedIn: string;
   
+  // Horários
+  scheduleRemote: string;
+  scheduleInPerson: string;
+  
   // Colors
   primaryColor: string;
   secondaryColor: string;
@@ -122,6 +126,9 @@ const defaultContent: SiteContent = {
   footerFacebook: "https://facebook.com/helpsystem",
   footerInstagram: "https://instagram.com/helpsystem",
   footerLinkedIn: "https://linkedin.com/company/helpsystem",
+  
+  scheduleRemote: "24/7",
+  scheduleInPerson: "Seg-Sex 9h-18h",
   
   primaryColor: "#3b82f6",
   secondaryColor: "#8b5cf6",
@@ -599,6 +606,36 @@ export default function SimpleAdmin() {
                     onChange={(e) => handleChange("footerLinkedIn", e.target.value)}
                     className="bg-slate-800/50 border-blue-500/30 text-white"
                     placeholder="LinkedIn URL"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Horários */}
+            <Card className="bg-slate-900/90 border-blue-500/30">
+              <CardHeader>
+                <CardTitle className="text-white">⏰ Horários de Atendimento</CardTitle>
+                <CardDescription className="text-gray-400">
+                  Configure os horários de atendimento que aparecem no rodapé
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <label className="text-sm text-gray-400 mb-2 block">🌐 Atendimento Remoto</label>
+                  <Input
+                    value={content.scheduleRemote}
+                    onChange={(e) => handleChange("scheduleRemote", e.target.value)}
+                    className="bg-slate-800/50 border-blue-500/30 text-white"
+                    placeholder="Ex: 24/7"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm text-gray-400 mb-2 block">🏢 Atendimento Presencial</label>
+                  <Input
+                    value={content.scheduleInPerson}
+                    onChange={(e) => handleChange("scheduleInPerson", e.target.value)}
+                    className="bg-slate-800/50 border-blue-500/30 text-white"
+                    placeholder="Ex: Seg-Sex 9h-18h"
                   />
                 </div>
               </CardContent>
