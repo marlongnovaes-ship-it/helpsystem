@@ -3,6 +3,8 @@ import VirtualAssistant from "@/components/VirtualAssistant";
 import TechEffects from "@/components/TechEffects";
 import FloatingHardware from "@/components/FloatingHardware";
 import Testimonials from "@/components/Testimonials";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -102,6 +104,7 @@ export default function Home() {
       
       {/* Interactive Components */}
       <VirtualAssistant />
+      <FloatingWhatsApp />
       {/* Animated particles background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/30 rounded-full blur-[120px] animate-pulse-slow" />
@@ -487,6 +490,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      
+      {/* WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 }

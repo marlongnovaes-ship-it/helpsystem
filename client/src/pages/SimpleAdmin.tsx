@@ -68,6 +68,9 @@ interface SiteContent {
   // Colors
   primaryColor: string;
   secondaryColor: string;
+  
+  // WhatsApp Button
+  whatsappNumber: string;
 }
 
 const defaultContent: SiteContent = {
@@ -121,7 +124,9 @@ const defaultContent: SiteContent = {
   footerLinkedIn: "https://linkedin.com/company/helpsystem",
   
   primaryColor: "#3b82f6",
-  secondaryColor: "#8b5cf6"
+  secondaryColor: "#8b5cf6",
+  
+  whatsappNumber: "5511999999999"
 };
 
 interface ContactRequest {
@@ -720,6 +725,40 @@ export default function SimpleAdmin() {
 
           {/* Settings Tab */}
           <TabsContent value="settings" className="space-y-6">
+            <Card className="bg-slate-900/90 border-blue-500/30">
+              <CardHeader>
+                <CardTitle className="text-white">📱 Número do WhatsApp Flutuante</CardTitle>
+                <CardDescription>Configure o número do botão WhatsApp que aparece no site</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <label className="text-sm text-gray-400 mb-2 block">Número com código do país (ex: 5511999999999)</label>
+                  <Input
+                    value={content.whatsappNumber}
+                    onChange={(e) => {
+                      handleChange("whatsappNumber", e.target.value);
+                      localStorage.setItem("whatsapp_number", e.target.value);
+                    }}
+                    className="bg-slate-800/50 border-blue-500/30 text-white"
+                    placeholder="5511999999999"
+                  />
+                  <p className="text-xs text-gray-500 mt-2">
+                    ⚠️ Formato: Código do país + DDD + Número (sem espaços ou traços)
+                  </p>
+                </div>
+                <Button
+                  onClick={() => {
+                    localStorage.setItem("whatsapp_number", content.whatsappNumber);
+                    alert("✅ Número do WhatsApp atualizado! Recarregue o site para ver as mudanças.");
+                  }}
+                  className="w-full bg-green-600 hover:bg-green-700"
+                >
+                  <Save className="w-4 h-4 mr-2" />
+                  Salvar Número do WhatsApp
+                </Button>
+              </CardContent>
+            </Card>
+            
             <Card className="bg-slate-900/90 border-blue-500/30">
               <CardHeader>
                 <CardTitle className="text-white">🔐 Alterar Senha do Painel</CardTitle>
